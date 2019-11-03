@@ -7,6 +7,10 @@ import "./assets/css/comm.css";
 // import "./permission";
 
 import "./mock/index";
+//导入iconfont
+import "./assets/iconfont/iconfont.css";
+import "./assets/iconfont/iconfont.js";
+
 
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
