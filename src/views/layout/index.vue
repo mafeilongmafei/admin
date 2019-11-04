@@ -59,12 +59,12 @@
           </el-breadcrumb>
         </div>
         <div>
-          <el-dropdown>
+          <el-dropdown  @command="handleCommand">
             <i class="el-icon-setting" style="margin-right: 15px"></i>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>查看</el-dropdown-item>
-              <el-dropdown-item>新增</el-dropdown-item>
-              <el-dropdown-item>删除</el-dropdown-item>
+              <el-dropdown-item command="see">查看</el-dropdown-item>
+              <el-dropdown-item command="newAdd">新增</el-dropdown-item>
+              <el-dropdown-item command="exit">退出</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
           <span>王小虎</span>
@@ -79,6 +79,9 @@
 </template>
 <script>
 import { mapState } from "vuex";
+import {removeToken , removeRank } from "../../untils/auth.js"
+//单独的话只能这样用
+// import { Message } from 'element-ui'  Message('xxx')
 export default {
   data() {
     return {
@@ -101,7 +104,22 @@ export default {
       matched.forEach(item=>{
         this.rous.push({ path : item.path , name : item.name})
       })
-    }
+    },
+    //退出登录
+     handleCommand(command) {
+        if(command == "exit") {
+          removeToken();
+          removeRank()
+        }
+        this.$message({
+           message: "退出成功",
+          type: 'success'
+        })     
+      
+      },
+      
+  
+   
   },
   computed: {
     ...mapState(["user"])

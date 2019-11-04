@@ -16,7 +16,7 @@
             v-model="ruleForm.nikname"
             autocomplete="off"
             prefix-icon="el-icon-user-solid"
-            placeholder="用户名admin"
+            placeholder="用户名user或者admin"
           ></el-input>
         </el-form-item>
         <el-form-item prop="password">

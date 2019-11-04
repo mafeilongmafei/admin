@@ -9,7 +9,7 @@ import { setToken, setRank } from "@/untils/auth";
 import { getInfo, getShop , getEchData  } from "@/untils/api";
 
 export default {
-  ByUsername({ commit }, userInfo) {
+  ByUsername({ commit, state }, userInfo) {
     const username = userInfo.username.trim();
     return new Promise((resolve, reject) => {
       getInfo(username, userInfo.password)
@@ -17,7 +17,11 @@ export default {
           const data = response.token;
           setToken(data); //登录成功后将token存储在cookie之中
           // 这个应该放在token中
-          setRank(response.rank);
+          //返回的有用户的权限
+          //我写在了state  直接取  不然的话是从返回的数据中取 就是 setRank(response.rank);
+          // setRank(response.rank);
+               
+          setRank(state.name[username].rank);//放到localStorag 中
           commit(SET_TOKEN, response);
 
           resolve(data);

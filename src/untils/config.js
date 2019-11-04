@@ -79,7 +79,7 @@ export default [
         iconfont: "iconfont icon-dingdanliebiao1",
         meta: {
           name: "订单列表",
-          rank: 5,
+          rank: 4,
           path: "/order/list"
         },
         children: null
@@ -91,7 +91,7 @@ export default [
         iconfont: "iconfont icon-shezhi",
         meta: {
           name: "订单设置",
-          rank: 4,
+          rank: 5,
           path: "/order/setting"
         },
         children: null

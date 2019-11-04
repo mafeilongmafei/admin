@@ -1,6 +1,7 @@
 export const validatorName = (rule, value, callback) => {
-  if (value !== "admin") {
-    return callback(new Error("用户名必须为admin"));
+ 
+  if (value !== "user" &&  value !== "admin") {
+    return callback(new Error("用户名必须为user或者是admin"));
   } else {
     callback();
   }

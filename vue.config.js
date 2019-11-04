@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "/admin/dist",
+  publicPath: "/",
   devServer: {
     port: 8888, // 端口号
     host: "localhost",

@@ -39,6 +39,7 @@ import {
   Link,
   CheckboxGroup,
   Upload,
+  Message
 } from "element-ui";
 
 Vue.use(Button);
@@ -81,3 +82,5 @@ Vue.use(DatePicker);
 Vue.use(Link);
 Vue.use(CheckboxGroup);
 Vue.use(Upload);
+
+Vue.prototype.$message = Message;
